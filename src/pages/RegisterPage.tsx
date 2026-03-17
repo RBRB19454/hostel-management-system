@@ -172,8 +172,6 @@ const RegisterPage: React.FC = () => {
   const commonFields = (
     <>
       <input name="name" type="text" required placeholder="Full Name" onChange={handleInputChange} className="input-field" />
-      <input name="email" type="email" required placeholder="Email Address" onChange={handleInputChange} className="input-field" />
-      {!emailValid && <p className="text-red-500 text-xs">Please enter a valid email.</p>}
       <input name="phone" type="tel" required placeholder="Phone Number" onChange={handleInputChange} className="input-field" />
       <select name="gender" required onChange={handleInputChange} className="input-field" defaultValue="">
         <option value="" disabled>Select your Gender</option>
@@ -209,6 +207,17 @@ const RegisterPage: React.FC = () => {
         onChange={handleInputChange}
         className="input-field"
       />
+      
+      <input
+        name="email"
+        type="email"
+        required
+        placeholder="Email Address"
+        onChange={handleInputChange}
+        className="input-field"
+      />
+      {!emailValid && <p className="text-red-500 text-xs">Please enter a valid email.</p>}
+
       {commonFields}
     
 
@@ -275,6 +284,16 @@ const RegisterPage: React.FC = () => {
         className="input-field"
       />
 
+      <input
+        name="email"
+        type="email"
+        required
+        placeholder="Email Address"
+        onChange={handleInputChange}
+        className="input-field"
+      />
+      {!emailValid && <p className="text-red-500 text-xs">Please enter a valid email.</p>}
+      
       <select
         name="hostel"
         required
