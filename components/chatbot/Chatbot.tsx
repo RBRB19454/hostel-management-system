@@ -38,10 +38,11 @@ const Chatbot: React.FC = () => {
     const handleSend = async () => {
         if (input.trim() === '' || isLoading) return;
         
-        const userMessage: Message = { sender: 'user', text: input, timestamp: new Date() };
-        setMessages(prev => [...prev, userMessage]);
-        setInput('');
-        setIsLoading(true);
+        const userMessage: Message = { 
+            sender: 'user', 
+            text: input + " (Answer in same language)", 
+            timestamp: new Date() 
+        };
 
         try {
             const stream = await sendMessageToChat(userMessage.text, messages);
